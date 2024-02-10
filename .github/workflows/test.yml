@@ -19,7 +19,8 @@ jobs:
         with:
          path: ~/.npm
          key: npm-${{ hashFiles('package-lock.json') }}
-         restore-keys: npm-      - name: Prep NPM dependencies
+         restore-keys: npm-      
+      - name: Prep NPM dependencies
         run: npm install -f
       
       - name: Test NPM test:unit
