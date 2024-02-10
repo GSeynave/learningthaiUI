@@ -1,0 +1,25 @@
+jobs: 
+  unit-test:
+    runs-on: ubuntu-latest
+    permissions:
+      checks: write
+      pull-requests: write
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+         path: ~/.npm
+         key: npm-${{ hashFiles('package-lock.json') }}
+         restore-keys: npm-      - name: Prep NPM dependencies
+        run: npm install -f
+      
+      - name: Test NPM test:unit
+        run: npm run test:unit
