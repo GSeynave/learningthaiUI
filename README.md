@@ -66,3 +66,13 @@ npm run test:e2e
 ```sh
 npm run lint
 ```
+
+
+
+### TODO 
+
+Installation of node.
+Installation of the project : ```npm install```
+Vitest installation for unit test.
+Formatting file with *Prettier*
+Instalation of Axios for HTTP request : ```npm install axios```
