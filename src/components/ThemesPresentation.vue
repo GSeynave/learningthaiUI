@@ -5,8 +5,8 @@ import { reactive, ref } from 'vue';
 
 const themesService = new ThemesService()
 
-let themes: string[]= ref([]);
-let errorMessage: string = ref("");
+const themes= ref<string[]>([]);
+const errorMessage = ref("");
 themesService
   .getThemes()
   .then((value) => {
