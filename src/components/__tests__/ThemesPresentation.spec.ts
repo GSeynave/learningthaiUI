@@ -13,6 +13,7 @@ describe('ThemesPresentation', () => {
     expect(wrapper).toBeDefined()
   }),
     it('init x themeItem', () => {
+      
       const wrapper = shallowMount(ThemesPresentation)
       expect(wrapper.html()).contains('theme-item')
     }),
