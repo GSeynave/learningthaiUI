@@ -5,18 +5,25 @@ const client = axios.create({
 
 export default class ThemesService {
   public async getThemes(): Promise<string[]> /* TODO:  add return type : themes class*/ {
-    try{
-      const searchResponse: AxiosResponse = await client.get('/themes');
-      console.log('respones', searchResponse);
-      const themesFound: string[] = searchResponse.data;
-      return themesFound;
-      
-    } catch(error: any){
-      throw new Error(this.handleError(error.response));
-    }
+    return client.get('/themes')
+      .then((value) => {
+        return Promise.resolve(value.data);
+      })
+      .catch((error) => {
+        return Promise.reject(this.handleError(error));
+      });
   }
 
-  handleError(errorResponse: any){
-      return errorResponse.status + " " + errorResponse.data.status + " " + errorResponse.data.message;
+  handleError(error: any){
+    if(error.response){
+      const errorResponse = error.response;
+      return "Api message : " + errorResponse.status + ":" + errorResponse.data.status + "_" + errorResponse.data.message;
+    } else if(error.request) {
+      console.log(error.request);
+    } else {
+      console.log('Error', error.message);
+    }
+    return "An error occured. Try again later.";
+     
   }
 }
