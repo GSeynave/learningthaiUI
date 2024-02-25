@@ -4,6 +4,7 @@ import ThemesService from '../components/services/ThemesService'
 import { ref } from 'vue'
 import { toast, type ToastOptions } from 'vue3-toastify'
 import { UiLoading } from "@kalimahapps/vue-icons";
+import { ClWarning } from "@kalimahapps/vue-icons";
 
 const themesService = new ThemesService()
 let loading = ref(true);
@@ -28,26 +29,40 @@ themesService
 </script>
 
 <template>
-  <div data-testid="themes-list">
-    Here is the list of all available themes
-    <div v-if="loading"><UiLoading></UiLoading>Fetching data...</div>
+  <div class="themesContainer">
+    <header>Themes</header>
+    <div class="info" v-if="loading"><UiLoading></UiLoading>Fetching data...</div>
     <div v-else>
       <div v-if="themes.length > 0">
-        <li v-for="(themeName, index) in themes" :key="index">
-          <ThemeItem :theme-name="themeName"></ThemeItem>
+        <li v-for="(theme, index) in themes" :key="index">
+          <ThemeItem :theme="theme"></ThemeItem>
         </li>
       </div>
-      <div v-else class="warning">No themes available</div>
+      <div v-else class="warning">No themes available<ClWarning></ClWarning></div>
     </div>
   </div>
 </template>
 
 <style>
+.themesContainer{
+  margin-top: 2em;
+  padding: 1.5em;
+  background-color:var(--color-container);
+  border: thick double var(--color-border);
+  border-radius: 8px;
+}
+
+li {
+  margin-top: 0.5em;
+  list-style-type: none;
+}
 .warning {
-  color: rgb(252, 119, 71);
+  color: var(--warning);
 }
 .error {
-  text-decoration: underline;
-  color: red;
+  color: var(--error);
+}
+.info{
+  color: var(--info);
 }
 </style>
