@@ -14,7 +14,7 @@ function toggleDisplay(){
     <div class="themeHeader">{{ theme.name }}</div>
     <div class="themeDetail">{{ theme.description }}</div>
   </div>
-  <div class="collections" v-if="isDisplay"><CollectionList></CollectionList></div>
+  <div class="collections" v-if="isDisplay"><CollectionList :themeID="theme.id"></CollectionList></div>
 </div>
 </template>
 

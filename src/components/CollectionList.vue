@@ -7,12 +7,13 @@ import { UiLoading } from "@kalimahapps/vue-icons";
 import { ClWarning } from "@kalimahapps/vue-icons";
 
 const CollectionsService = new CollectionService()
+const props = defineProps(['themeID']);
 let loading = ref(true);
 let notify: toast | null = null
 
 const collections = ref<string[]>([])
   CollectionsService
-  .getCollections()
+  .getCollectionsByThemeID(props.themeID)
   .then((value) => {
     loading.value = false
     collections.value = value
@@ -54,6 +55,7 @@ const collections = ref<string[]>([])
 .collectionItem{
   text-align: center;
   border-left: 1px solid var(--color-background-soft-2);
+  width: 25%;
 }
 .collectionItem:hover{
   border-radius: 4px;

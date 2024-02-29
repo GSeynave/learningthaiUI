@@ -4,8 +4,8 @@ const client = axios.create({
 });
 
 export default class CollectionsService {
-  public async getCollections(): Promise<string[]> /* TODO:  add return type : themes class*/ {
-    return client.get('/collections')
+  public async getCollectionsByThemeID(themeID: number): Promise<string[]> /* TODO:  add return type : themes class*/ {
+    return client.get('/collections/theme/'+themeID)
       .then((value) => {
         return Promise.resolve(value.data);
       })

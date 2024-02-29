@@ -1,18 +1,19 @@
 <script setup lang="ts">
-defineProps(['collection'])
+const props = defineProps(['collection']);
+console.log('collection', props.collection)
 </script>
 
 <template>
   <div class="collectionContainer">
     <div class="collectionHeader">{{ collection.name }}</div>
-    <div class="collectionDetail">Test description{{ collection.description }}</div>
+    <div class="collectionDetail">{{ collection.description }}</div>
   </div>
 </template>
 
 <style>
 .collectionContainer div{
   padding: 0 1rem;
-  display: inline-block;
+  display: table;
 }
 
 .collectionHeader{
