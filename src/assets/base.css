@@ -6,6 +6,7 @@
   --vt-c-cream-soft: #f5ebe0;
   --vt-c-cream-dark: #e3d5ca;
   --vt-c-brown-dark: #c7a896;
+  --vt-c-brown-shadow: #64544a;
 
   --vt-c-grey-light-1: #869271;
   --vt-c-grey-light-2: #588157;
@@ -24,6 +25,7 @@
   --color-background-soft: var(--vt-c-brown-soft);
   --color-background-soft-2: var(--vt-c-cream-soft);
   --color-container: var(--vt-c-cream-dark);
+  --color-shadow: var(--vt-c-brown-shadow);
 
   --color-heading: var( --vt-c-grey-light-3);
   --color-text: var(--vt-c-grey-light-2);

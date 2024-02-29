@@ -50,6 +50,7 @@ themesService
   background-color:var(--color-container);
   border: thick double var(--color-border);
   border-radius: 8px;
+  box-shadow: 6px 2px 2px var(--color-shadow);
 }
 
 li {

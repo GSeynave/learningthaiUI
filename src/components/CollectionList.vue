@@ -46,8 +46,14 @@ const collections = ref<string[]>([])
 .collectionsList{
   display: flex;
 }
+
+
+.collectionItem:first-of-type {
+  border: 0;
+}
 .collectionItem{
   text-align: center;
+  border-left: 1px solid var(--color-background-soft-2);
 }
 .collectionItem:hover{
   border-radius: 4px;
