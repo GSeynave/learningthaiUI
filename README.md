@@ -66,3 +66,15 @@ npm run test:e2e
 ```sh
 npm run lint
 ```
+
+
+
+### TODO 
+
+Installation of node.
+Installation of the project : ```npm install```
+Vitest installation for unit test.
+Formatting file with *Prettier*
+Installation of Axios for HTTP request : ```npm install axios```
+Installation of vue3-toastify to notify user of unexpected behaviour ```npm install --save vue3-toastify```
+Installation of vue-icons : ```npm install @kalimahapps/vue-icons```

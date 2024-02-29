@@ -13,7 +13,19 @@ describe('ThemesPresentation', () => {
     expect(wrapper).toBeDefined()
   }),
     it('init x themeItem', () => {
+      
       const wrapper = shallowMount(ThemesPresentation)
       expect(wrapper.html()).contains('theme-item')
+    }),
+    it('should have icon + waiting message when fetching api data', () =>{
+//TODO:
+    })
+    it('should have toast if error occured when fetching api data', () =>{
+      //TODO:
+
+    })
+    it('should have x child ThemeItem for each theme retrieve from api data', () =>{
+      //TODO:
+
     })
 })
